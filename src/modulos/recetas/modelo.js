@@ -41,7 +41,7 @@ exports.getRecipes = async (userId) => {
     let { data: recipes, error } = await supabase
     .from('recetas')
     .select('*')
-    .order('id', {ascending: true})
+    .order('id', {ascending: false})
     if(error) return error
     let { data: favoritos, error: errorFavoritos } = await supabase
         .from('favoritos')
